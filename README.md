@@ -32,3 +32,18 @@ usage: C:\msys64\home\YUU\dev\llama.cpp\llama-quantize.exe [--help] [--allow-req
       Advanced option to override model metadata by key in the quantized model. May be specified multiple times.
 Note: --include-weights and --exclude-weights cannot be used together
 ```
+
+## 会話
+```
+../llama.cpp/main.exe -m ./quantized_model/llama-3-youko-8b-q4_0.gguf --color -i -n 512 --repeat_last_n 64 --repeat_penalty 1.3 -c 20 --ignore-eos -p "以下は人間とAIアシスタントの会話です。AIアシスタントは親切で、丁寧で、正直で、日本語で回答します。
+```
+
+### オプション
+```
+-m <int>: モデルファイルのパス
+--color: 出力カラーを使用
+-i: 対話モードを有効化
+-n <int>: max_tokens. -1:無制限 (EOSトークンに達するまで生成を続ける)
+-c <int>: コンテキストサイズ（トークン数）を指定。このサイズを超えると、古い情報を「忘れ始める」。例: "-c 2048" とすると、モデルは最新の2048トークンのみを考慮します。
+--ignore-eos: EOSトークンを無視する。EOSトークンが出現した後も出力が継続する可能性がある。
+```
