@@ -43,7 +43,7 @@ Note: --include-weights and --exclude-weights cannot be used together
 
 ./llama.cpp/llama-cli.exe -m ./quantized_model/llama-3-youko-8b.gguf --color -i -n 128 -c 1024 -i -p "you are a helpful assistant" --stop "<|im_end|>" -cnv
 
-./llama.cpp/llama-cli.exe -m ./model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf --color -i -n 1024 -c 1024 -i --seed 42 -p "you are a helpful assistant" -cnv
+./llama.cpp/llama-cli.exe -m ./model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf --color -i -n 1024 -i --seed 42 -p "you are a helpful assistant" -cnv
 ```
 
 ### オプション
@@ -54,4 +54,30 @@ Note: --include-weights and --exclude-weights cannot be used together
 -n <int>: max_tokens. -1:無制限 (EOSトークンに達するまで生成を続ける)
 -c <int>: コンテキストサイズ（トークン数）を指定。このサイズを超えると、古い情報から「忘れ始める」。例: "-c 2048" とすると、モデルは最新の2048トークンのみを考慮します。
 --ignore-eos: EOSトークンを無視する。EOSトークンが出現した後も出力が継続する可能性がある。
+-ngl <int>: GPUレイヤー数 (GPUがある場合)
+```
+
+## seedを固定した場合でも回答が異なる場合の原因として考えられる可能性
+```
+理論上、完全に同じモデル、同じllama.cpp、同じシード値を使用すれば、異なるPCでも同じ回答が得られるはずです。しかし、実際にはいくつかの要因が影響する可能性があります：
+a) 完全な再現性が期待できる場合：
+
+同じバージョンのllama.cppを使用
+同じモデルファイル（バイト単位で同一）を使用
+同じコンパイラ、同じコンパイルオプションでビルドされたllama.cpp
+同じCPUアーキテクチャ（例：x86-64）
+同じ浮動小数点演算の実装
+
+b) 回答に変動が現れる可能性がある場合：
+
+異なるCPUアーキテクチャ（例：x86-64 vs ARM）
+異なる浮動小数点演算の実装（例：Intel vs AMD）
+異なるOSや環境変数の設定
+異なるバージョンのllama.cppや、異なるコンパイルオプション
+ハードウェアの違い（例：AVX命令セットの有無）
+
+特に浮動小数点演算は、ハードウェアやコンパイラの違いによってわずかな違いが生じる可能性があり、これが累積して結果に影響を与えることがあります。
+完全な再現性を確保するためには、同じハードウェア、OSバージョン、コンパイラ設定を使用することが理想的です。
+
+同じOS、同じアーキテクチャの環境でコンパイル済みのllama.cppを使用する限り、コンパイラの設定の違いは結果の変動の原因として無視できると考えられます。しかし、ハードウェアやOSレベルの違いは依然として結果に影響を与える可能性があるため、完全な再現性を保証するためには、これらの要因も考慮する必要があります。
 ```
