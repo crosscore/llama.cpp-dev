@@ -11,4 +11,3 @@ services:
       - OMP_NUM_THREADS=1
       - OPENBLAS_NUM_THREADS=1
     working_dir: /app/llama.cpp
-    command: /bin/bash

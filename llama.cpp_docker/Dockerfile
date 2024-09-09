@@ -28,5 +28,5 @@ RUN git clone https://github.com/ggerganov/llama.cpp.git && \
 WORKDIR /app/llama.cpp
 RUN make
 
-# Set the entrypoint to bash
-ENTRYPOINT ["/bin/bash"]
+# Use CMD instead of ENTRYPOINT
+CMD ["/bin/sh", "-c", "tail -f /dev/null"]
