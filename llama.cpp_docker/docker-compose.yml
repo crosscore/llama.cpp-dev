@@ -1,0 +1,15 @@
+version: '3'
+services:
+  llama-cpp:
+    build:
+      context: ./llama.cpp_docker
+      dockerfile: Dockerfile
+    volumes:
+      - ../model:/app/model
+      - ../result:/app/result
+      - ../tips:/app/tips
+    environment:
+      - OMP_NUM_THREADS=1
+      - OPENBLAS_NUM_THREADS=1
+    working_dir: /app/llama.cpp
+    command: /bin/bash
