@@ -1,8 +1,7 @@
-version: '3'
 services:
   llama-cpp:
     build:
-      context: ./llama.cpp_docker
+      context: .
       dockerfile: Dockerfile
     volumes:
       - ../model:/app/model

@@ -1,33 +1,20 @@
-# Use Ubuntu 22.04 as the base image
-FROM ubuntu:22.04
+# Use Python 3.11 slim image as the base
+FROM python:3.11-slim-bullseye
 
-# Avoid prompts from apt
+# Avoid prompts from apt and set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
+ENV OMP_NUM_THREADS=1
+ENV OPENBLAS_NUM_THREADS=1
 
-# Add deadsnakes PPA for Python 3.11
-RUN apt-get update && apt-get install -y software-properties-common && \
-    add-apt-repository ppa:deadsnakes/ppa
-
-# Install necessary packages including Python 3.11
+# Install necessary packages
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
     git \
-    wget \
-    python3.11 \
-    python3.11-dev \
-    python3.11-distutils \
-    python3-pip \
     libopenblas-dev \
     ninja-build \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
-
-# Set Python 3.11 as the default python3
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
-
-# Upgrade pip
-RUN python3 -m pip install --upgrade pip
 
 # Set working directory
 WORKDIR /app
@@ -40,10 +27,6 @@ RUN git clone https://github.com/ggerganov/llama.cpp.git && \
 # Build llama.cpp
 WORKDIR /app/llama.cpp
 RUN make
-
-# Set environment variables for consistent behavior
-ENV OMP_NUM_THREADS=1
-ENV OPENBLAS_NUM_THREADS=1
 
 # Set the entrypoint to bash
 ENTRYPOINT ["/bin/bash"]
