@@ -3,10 +3,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: llama
     volumes:
       - ../model:/app/model
       - ../result:/app/result
       - ../tips:/app/tips
+      - ./llama_cpp_build:/app/llama.cpp  # New volume for build artifacts
     environment:
       - OMP_NUM_THREADS=1
       - OPENBLAS_NUM_THREADS=1
