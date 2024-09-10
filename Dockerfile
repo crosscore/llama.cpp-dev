@@ -31,11 +31,8 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the build script
-COPY llama_build.sh .
-RUN chmod +x llama_build.sh
+RUN pip install --upgrade pip \
+    pip install --no-cache-dir -r requirements.txt
 
 # Set default command
 CMD ["/bin/bash"]
