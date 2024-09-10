@@ -5,9 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ../model:/app/model
-      - ../result:/app/result
-      - ../tips:/app/tips
+      - ./model:/app/model
+      - ./result:/app/result
+      - ./tips:/app/tips
       - ./llama.cpp_build:/app/llama.cpp_build
     environment:
       - OMP_NUM_THREADS=1

@@ -45,6 +45,13 @@ Note: --include-weights and --exclude-weights cannot be used together
 ./llama.cpp/llama-cli.exe -m ./quantized_model/llama-3-youko-8b.gguf --color -i -n 128 -c 1024 -i -p "you are a helpful assistant" --stop "<|im_end|>" -cnv
 
 ./llama.cpp/llama-cli.exe -m ./model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf --color -i -n 1024 -i --seed 42 -p "you are a helpful assistant" -cnv
+
+./llama.cpp_b3707/llama-cli -m ../model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf --color -i -n 1024 -i --seed 42 -p "you are a helpful assistant" -cnv
+```
+
+### 質問文
+```
+量子力学について日本語20文字以内で教えて下さい。
 ```
 
 ### オプション
@@ -96,3 +103,5 @@ Note: --include-weights and --exclude-weights cannot be used together
 - コンパイラオプションと数学ライブラリを統一する: ビルド時に使用するコンパイラやオプション、数学ライブラリを固定します。
 
 - 並列処理を制限する: スレッド数を1に固定するなど、並列処理を無効化または制限します。ただし、これにより処理速度が低下する可能性があります。
+
+## 環境確認コマンド

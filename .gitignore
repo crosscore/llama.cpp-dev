@@ -6,6 +6,7 @@ __pycache__/
 model/
 gguf_model/
 llama.cpp/
+llama.cpp_b3707/
 
 # C extensions
 *.so
