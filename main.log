@@ -1,105 +1,105 @@
-[1725987641] Log start
-[1725987641] Cmd: C:\msys64\home\YUU\llama.cpp-dev\llama.cpp_build\llama.cpp_b3707\llama-cli.exe -m ./model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf --color -i -n 1024 -i --seed 42 -p "you are a helpful assistant" -cnv
-[1725987641] main: seed = 42
-[1725987641] main: llama backend init
-[1725987641] main: load the model and apply lora adapter, if any
-[1725987641] llama_model_loader: loaded meta data with 22 key-value pairs and 291 tensors from ./model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf (version GGUF V3 (latest))
-[1725987641] llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
-[1725987641] llama_model_loader: - kv   0:                       general.architecture str              = llama
-[1725987641] llama_model_loader: - kv   1:                               general.name str              = Llama-3-8B-optimal-merged-stage2
-[1725987641] llama_model_loader: - kv   2:                          llama.block_count u32              = 32
-[1725987641] llama_model_loader: - kv   3:                       llama.context_length u32              = 8192
-[1725987641] llama_model_loader: - kv   4:                     llama.embedding_length u32              = 4096
-[1725987641] llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
-[1725987641] llama_model_loader: - kv   6:                 llama.attention.head_count u32              = 32
-[1725987641] llama_model_loader: - kv   7:              llama.attention.head_count_kv u32              = 8
-[1725987641] llama_model_loader: - kv   8:                       llama.rope.freq_base f32              = 500000.000000
-[1725987641] llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
-[1725987641] llama_model_loader: - kv  10:                          general.file_type u32              = 15
-[1725987641] llama_model_loader: - kv  11:                           llama.vocab_size u32              = 128256
-[1725987641] llama_model_loader: - kv  12:                 llama.rope.dimension_count u32              = 128
-[1725987641] llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
-[1725987641] llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = llama-bpe
-[1725987641] llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
-[1725987641] llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
-[1725987641] llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
-[1725987641] llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 128000
-[1725987641] llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 128009
-[1725987641] llama_model_loader: - kv  20:                    tokenizer.chat_template str              = {% set loop_messages = messages %}{% ...
-[1725987641] llama_model_loader: - kv  21:               general.quantization_version u32              = 2
-[1725987641] llama_model_loader: - type  f32:   65 tensors
-[1725987641] llama_model_loader: - type q4_K:  193 tensors
-[1725987641] llama_model_loader: - type q6_K:   33 tensors
-[1725987641] llm_load_vocab: special tokens cache size = 256
-[1725987641] llm_load_vocab: token to piece cache size = 0.8000 MB
-[1725987641] llm_load_print_meta: format           = GGUF V3 (latest)
-[1725987641] llm_load_print_meta: arch             = llama
-[1725987642] llm_load_print_meta: vocab type       = BPE
-[1725987642] llm_load_print_meta: n_vocab          = 128256
-[1725987642] llm_load_print_meta: n_merges         = 280147
-[1725987642] llm_load_print_meta: vocab_only       = 0
-[1725987642] llm_load_print_meta: n_ctx_train      = 8192
-[1725987642] llm_load_print_meta: n_embd           = 4096
-[1725987642] llm_load_print_meta: n_layer          = 32
-[1725987642] llm_load_print_meta: n_head           = 32
-[1725987642] llm_load_print_meta: n_head_kv        = 8
-[1725987642] llm_load_print_meta: n_rot            = 128
-[1725987642] llm_load_print_meta: n_swa            = 0
-[1725987642] llm_load_print_meta: n_embd_head_k    = 128
-[1725987642] llm_load_print_meta: n_embd_head_v    = 128
-[1725987642] llm_load_print_meta: n_gqa            = 4
-[1725987642] llm_load_print_meta: n_embd_k_gqa     = 1024
-[1725987642] llm_load_print_meta: n_embd_v_gqa     = 1024
-[1725987642] llm_load_print_meta: f_norm_eps       = 0.0e+00
-[1725987642] llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
-[1725987642] llm_load_print_meta: f_clamp_kqv      = 0.0e+00
-[1725987642] llm_load_print_meta: f_max_alibi_bias = 0.0e+00
-[1725987642] llm_load_print_meta: f_logit_scale    = 0.0e+00
-[1725987642] llm_load_print_meta: n_ff             = 14336
-[1725987642] llm_load_print_meta: n_expert         = 0
-[1725987642] llm_load_print_meta: n_expert_used    = 0
-[1725987642] llm_load_print_meta: causal attn      = 1
-[1725987642] llm_load_print_meta: pooling type     = 0
-[1725987642] llm_load_print_meta: rope type        = 0
-[1725987642] llm_load_print_meta: rope scaling     = linear
-[1725987642] llm_load_print_meta: freq_base_train  = 500000.0
-[1725987642] llm_load_print_meta: freq_scale_train = 1
-[1725987642] llm_load_print_meta: n_ctx_orig_yarn  = 8192
-[1725987642] llm_load_print_meta: rope_finetuned   = unknown
-[1725987642] llm_load_print_meta: ssm_d_conv       = 0
-[1725987642] llm_load_print_meta: ssm_d_inner      = 0
-[1725987642] llm_load_print_meta: ssm_d_state      = 0
-[1725987642] llm_load_print_meta: ssm_dt_rank      = 0
-[1725987642] llm_load_print_meta: ssm_dt_b_c_rms   = 0
-[1725987642] llm_load_print_meta: model type       = 8B
-[1725987642] llm_load_print_meta: model ftype      = Q4_K - Medium
-[1725987642] llm_load_print_meta: model params     = 8.03 B
-[1725987642] llm_load_print_meta: model size       = 4.58 GiB (4.89 BPW) 
-[1725987642] llm_load_print_meta: general.name     = Llama-3-8B-optimal-merged-stage2
-[1725987642] llm_load_print_meta: BOS token        = 128000 '<|begin_of_text|>'
-[1725987642] llm_load_print_meta: EOS token        = 128009 '<|eot_id|>'
-[1725987642] llm_load_print_meta: LF token         = 128 'Ä'
-[1725987642] llm_load_print_meta: EOT token        = 128009 '<|eot_id|>'
-[1725987642] llm_load_print_meta: max token length = 256
-[1725987642] llm_load_tensors: ggml ctx size =    0.14 MiB
-[1725987642] llm_load_tensors:        CPU buffer size =  4685.30 MiB
-[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] .[1725987642] 
-[1725987642] llama_new_context_with_model: n_ctx      = 8192
-[1725987642] llama_new_context_with_model: n_batch    = 2048
-[1725987642] llama_new_context_with_model: n_ubatch   = 512
-[1725987642] llama_new_context_with_model: flash_attn = 0
-[1725987642] llama_new_context_with_model: freq_base  = 500000.0
-[1725987642] llama_new_context_with_model: freq_scale = 1
-[1725987642] llama_kv_cache_init:        CPU KV buffer size =  1024.00 MiB
-[1725987642] llama_new_context_with_model: KV self size  = 1024.00 MiB, K (f16):  512.00 MiB, V (f16):  512.00 MiB
-[1725987642] llama_new_context_with_model:        CPU  output buffer size =     0.49 MiB
-[1725987642] llama_new_context_with_model:        CPU compute buffer size =   560.01 MiB
-[1725987642] llama_new_context_with_model: graph nodes  = 1030
-[1725987642] llama_new_context_with_model: graph splits = 1
-[1725987642] warming up the model with an empty run
-[1725987644] main: llama threadpool init = n_threads = 9
-[1725987644] n_ctx: 8192
-[1725987644] main: chat template example: <|start_header_id|>system<|end_header_id|>
+[1725988219] Log start
+[1725988219] Cmd: C:\msys64\home\YUU\llama.cpp-dev\llama.cpp_build\llama.cpp_b3707\llama-cli.exe -m ./model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf --color -i -n 1024 -i --seed 42 -p "you are a helpful assistant" -cnv
+[1725988219] main: seed = 42
+[1725988219] main: llama backend init
+[1725988219] main: load the model and apply lora adapter, if any
+[1725988219] llama_model_loader: loaded meta data with 22 key-value pairs and 291 tensors from ./model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf (version GGUF V3 (latest))
+[1725988219] llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+[1725988219] llama_model_loader: - kv   0:                       general.architecture str              = llama
+[1725988219] llama_model_loader: - kv   1:                               general.name str              = Llama-3-8B-optimal-merged-stage2
+[1725988219] llama_model_loader: - kv   2:                          llama.block_count u32              = 32
+[1725988219] llama_model_loader: - kv   3:                       llama.context_length u32              = 8192
+[1725988219] llama_model_loader: - kv   4:                     llama.embedding_length u32              = 4096
+[1725988219] llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+[1725988219] llama_model_loader: - kv   6:                 llama.attention.head_count u32              = 32
+[1725988219] llama_model_loader: - kv   7:              llama.attention.head_count_kv u32              = 8
+[1725988219] llama_model_loader: - kv   8:                       llama.rope.freq_base f32              = 500000.000000
+[1725988219] llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+[1725988219] llama_model_loader: - kv  10:                          general.file_type u32              = 15
+[1725988219] llama_model_loader: - kv  11:                           llama.vocab_size u32              = 128256
+[1725988219] llama_model_loader: - kv  12:                 llama.rope.dimension_count u32              = 128
+[1725988219] llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+[1725988219] llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = llama-bpe
+[1725988219] llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+[1725988219] llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+[1725988219] llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+[1725988219] llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 128000
+[1725988219] llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 128009
+[1725988219] llama_model_loader: - kv  20:                    tokenizer.chat_template str              = {% set loop_messages = messages %}{% ...
+[1725988219] llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+[1725988219] llama_model_loader: - type  f32:   65 tensors
+[1725988219] llama_model_loader: - type q4_K:  193 tensors
+[1725988219] llama_model_loader: - type q6_K:   33 tensors
+[1725988219] llm_load_vocab: special tokens cache size = 256
+[1725988219] llm_load_vocab: token to piece cache size = 0.8000 MB
+[1725988219] llm_load_print_meta: format           = GGUF V3 (latest)
+[1725988219] llm_load_print_meta: arch             = llama
+[1725988219] llm_load_print_meta: vocab type       = BPE
+[1725988219] llm_load_print_meta: n_vocab          = 128256
+[1725988219] llm_load_print_meta: n_merges         = 280147
+[1725988219] llm_load_print_meta: vocab_only       = 0
+[1725988219] llm_load_print_meta: n_ctx_train      = 8192
+[1725988219] llm_load_print_meta: n_embd           = 4096
+[1725988219] llm_load_print_meta: n_layer          = 32
+[1725988219] llm_load_print_meta: n_head           = 32
+[1725988219] llm_load_print_meta: n_head_kv        = 8
+[1725988219] llm_load_print_meta: n_rot            = 128
+[1725988219] llm_load_print_meta: n_swa            = 0
+[1725988219] llm_load_print_meta: n_embd_head_k    = 128
+[1725988219] llm_load_print_meta: n_embd_head_v    = 128
+[1725988219] llm_load_print_meta: n_gqa            = 4
+[1725988219] llm_load_print_meta: n_embd_k_gqa     = 1024
+[1725988219] llm_load_print_meta: n_embd_v_gqa     = 1024
+[1725988219] llm_load_print_meta: f_norm_eps       = 0.0e+00
+[1725988219] llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
+[1725988219] llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+[1725988219] llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+[1725988219] llm_load_print_meta: f_logit_scale    = 0.0e+00
+[1725988219] llm_load_print_meta: n_ff             = 14336
+[1725988219] llm_load_print_meta: n_expert         = 0
+[1725988219] llm_load_print_meta: n_expert_used    = 0
+[1725988219] llm_load_print_meta: causal attn      = 1
+[1725988219] llm_load_print_meta: pooling type     = 0
+[1725988219] llm_load_print_meta: rope type        = 0
+[1725988219] llm_load_print_meta: rope scaling     = linear
+[1725988219] llm_load_print_meta: freq_base_train  = 500000.0
+[1725988219] llm_load_print_meta: freq_scale_train = 1
+[1725988219] llm_load_print_meta: n_ctx_orig_yarn  = 8192
+[1725988219] llm_load_print_meta: rope_finetuned   = unknown
+[1725988219] llm_load_print_meta: ssm_d_conv       = 0
+[1725988219] llm_load_print_meta: ssm_d_inner      = 0
+[1725988219] llm_load_print_meta: ssm_d_state      = 0
+[1725988219] llm_load_print_meta: ssm_dt_rank      = 0
+[1725988219] llm_load_print_meta: ssm_dt_b_c_rms   = 0
+[1725988219] llm_load_print_meta: model type       = 8B
+[1725988219] llm_load_print_meta: model ftype      = Q4_K - Medium
+[1725988219] llm_load_print_meta: model params     = 8.03 B
+[1725988219] llm_load_print_meta: model size       = 4.58 GiB (4.89 BPW) 
+[1725988219] llm_load_print_meta: general.name     = Llama-3-8B-optimal-merged-stage2
+[1725988219] llm_load_print_meta: BOS token        = 128000 '<|begin_of_text|>'
+[1725988219] llm_load_print_meta: EOS token        = 128009 '<|eot_id|>'
+[1725988219] llm_load_print_meta: LF token         = 128 'Ä'
+[1725988219] llm_load_print_meta: EOT token        = 128009 '<|eot_id|>'
+[1725988219] llm_load_print_meta: max token length = 256
+[1725988219] llm_load_tensors: ggml ctx size =    0.14 MiB
+[1725988220] llm_load_tensors:        CPU buffer size =  4685.30 MiB
+[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] .[1725988220] 
+[1725988220] llama_new_context_with_model: n_ctx      = 8192
+[1725988220] llama_new_context_with_model: n_batch    = 2048
+[1725988220] llama_new_context_with_model: n_ubatch   = 512
+[1725988220] llama_new_context_with_model: flash_attn = 0
+[1725988220] llama_new_context_with_model: freq_base  = 500000.0
+[1725988220] llama_new_context_with_model: freq_scale = 1
+[1725988220] llama_kv_cache_init:        CPU KV buffer size =  1024.00 MiB
+[1725988220] llama_new_context_with_model: KV self size  = 1024.00 MiB, K (f16):  512.00 MiB, V (f16):  512.00 MiB
+[1725988220] llama_new_context_with_model:        CPU  output buffer size =     0.49 MiB
+[1725988220] llama_new_context_with_model:        CPU compute buffer size =   560.01 MiB
+[1725988220] llama_new_context_with_model: graph nodes  = 1030
+[1725988220] llama_new_context_with_model: graph splits = 1
+[1725988220] warming up the model with an empty run
+[1725988222] main: llama threadpool init = n_threads = 9
+[1725988222] n_ctx: 8192
+[1725988222] main: chat template example: <|start_header_id|>system<|end_header_id|>
 
 You are a helpful assistant<|eot_id|><|start_header_id|>user<|end_header_id|>
 
@@ -110,148 +110,148 @@ Hi there<|eot_id|><|start_header_id|>user<|end_header_id|>
 How are you?<|eot_id|><|start_header_id|>assistant<|end_header_id|>
 
 
-[1725987644] 
-[1725987644] system_info: n_threads = 9 (n_threads_batch = 9) / 18 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
-[1725987644] add_bos: 1
-[1725987644] formatted: <|start_header_id|>system<|end_header_id|>
+[1725988222] 
+[1725988222] system_info: n_threads = 9 (n_threads_batch = 9) / 18 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+[1725988222] add_bos: 1
+[1725988222] formatted: <|start_header_id|>system<|end_header_id|>
 
 you are a helpful assistant<|eot_id|>
-[1725987644] tokenize the prompt
-[1725987644] prompt: "<|start_header_id|>system<|end_header_id|>
+[1725988222] tokenize the prompt
+[1725988222] prompt: "<|start_header_id|>system<|end_header_id|>
 
 you are a helpful assistant<|eot_id|>"
-[1725987644] tokens: [ '<|begin_of_text|>':128000, '<|start_header_id|>':128006, 'system':9125, '<|end_header_id|>':128007, '':271, 'you':9514, ' are':527, ' a':264, ' helpful':11190, ' assistant':18328, '<|eot_id|>':128009 ]
-[1725987644] recalculate the cached logits (check): embd_inp.empty() false, n_matching_session_tokens 0, embd_inp.size() 11, session_tokens.size() 0
-[1725987644] main: interactive mode on.
-[1725987644] sampling params: 
+[1725988222] tokens: [ '<|begin_of_text|>':128000, '<|start_header_id|>':128006, 'system':9125, '<|end_header_id|>':128007, '':271, 'you':9514, ' are':527, ' a':264, ' helpful':11190, ' assistant':18328, '<|eot_id|>':128009 ]
+[1725988222] recalculate the cached logits (check): embd_inp.empty() false, n_matching_session_tokens 0, embd_inp.size() 11, session_tokens.size() 0
+[1725988222] main: interactive mode on.
+[1725988222] sampling params: 
 	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
 	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
 	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
-[1725987644]  sampler constr: 
+[1725988222]  sampler constr: 
 	logits -> logit-bias -> penalties -> top-k -> tail-free -> typical -> top-p -> min-p -> temp-ext -> softmax -> dist 
-[1725987644] generate: n_ctx = 8192, n_batch = 2048, n_predict = 1024, n_keep = 1
-[1725987644] 
+[1725988222] generate: n_ctx = 8192, n_batch = 2048, n_predict = 1024, n_keep = 1
+[1725988222] 
 
-[1725987644] == Running in interactive mode. ==
-[1725987644]  - Press Ctrl+C to interject at any time.
-[1725987644]  - Press Return to return control to the AI.
+[1725988222] == Running in interactive mode. ==
+[1725988222]  - Press Ctrl+C to interject at any time.
+[1725988222]  - Press Return to return control to the AI.
  - To return control without starting a new line, end your input with '/'.
  - If you want to submit another line, end your input with '\'.
 
-[1725987644] embd_inp.size(): 11, n_consumed: 0
-[1725987644] found an EOG token
-[1725987644] formatted: <|start_header_id|>assistant<|end_header_id|>
+[1725988222] embd_inp.size(): 11, n_consumed: 0
+[1725988222] found an EOG token
+[1725988222] formatted: <|start_header_id|>assistant<|end_header_id|>
 
 <|eot_id|>
-[1725987644] eval: [ '<|begin_of_text|>':128000, '<|start_header_id|>':128006, 'system':9125, '<|end_header_id|>':128007, '':271, 'you':9514, ' are':527, ' a':264, ' helpful':11190, ' assistant':18328, '<|eot_id|>':128009 ]
-[1725987645] n_past = 11
-[1725987645] embd_inp.size(): 11, n_consumed: 11
-[1725987645] found an EOG token
-[1725987645] formatted: <|start_header_id|>assistant<|end_header_id|>
+[1725988222] eval: [ '<|begin_of_text|>':128000, '<|start_header_id|>':128006, 'system':9125, '<|end_header_id|>':128007, '':271, 'you':9514, ' are':527, ' a':264, ' helpful':11190, ' assistant':18328, '<|eot_id|>':128009 ]
+[1725988222] n_past = 11
+[1725988222] embd_inp.size(): 11, n_consumed: 11
+[1725988222] found an EOG token
+[1725988222] formatted: <|start_header_id|>assistant<|end_header_id|>
 
 <|eot_id|>
-[1725987645] waiting for user input
-[1725987647] buffer: '量子力学について日本語20文字以内で教えて下さい。
+[1725988222] waiting for user input
+[1725988225] buffer: '量子力学について日本語20文字以内で教えて下さい。
 '
-[1725987647] formatted: <|start_header_id|>user<|end_header_id|>
+[1725988225] formatted: <|start_header_id|>user<|end_header_id|>
 
 量子力学について日本語20文字以内で教えて下さい。<|eot_id|><|start_header_id|>assistant<|end_header_id|>
 
 
-[1725987647] input tokens: [ '<|start_header_id|>':128006, 'user':882, '<|end_header_id|>':128007, '':271, '':33857, '':45829, '':48634, '':48864, '':109853, '':102433, '':102158, '20':508, '':88435, '':23897, '':32943, '':16556, '':100927, '':107290, '':17297, '':65316, '':1811, '<|eot_id|>':128009, '<|start_header_id|>':128006, 'assistant':78191, '<|end_header_id|>':128007, '':271 ]
-[1725987647] n_remain: 998
-[1725987647] embd_inp.size(): 37, n_consumed: 11
-[1725987647] eval: [ '<|start_header_id|>':128006, 'user':882, '<|end_header_id|>':128007, '':271, '':33857, '':45829, '':48634, '':48864, '':109853, '':102433, '':102158, '20':508, '':88435, '':23897, '':32943, '':16556, '':100927, '':107290, '':17297, '':65316, '':1811, '<|eot_id|>':128009, '<|start_header_id|>':128006, 'assistant':78191, '<|end_header_id|>':128007, '':271 ]
-[1725987649] n_past = 37
-[1725987649] n_remain: 997
-[1725987649] eval: [ '':13177 ]
-[1725987649] n_past = 38
-[1725987649] n_remain: 996
-[1725987649] eval: [ '':33857 ]
-[1725987649] n_past = 39
-[1725987649] n_remain: 995
-[1725987649] eval: [ '':45829 ]
-[1725987649] n_past = 40
-[1725987649] n_remain: 994
-[1725987649] eval: [ '':48634 ]
-[1725987650] n_past = 41
-[1725987650] n_remain: 993
-[1725987650] eval: [ '':48864 ]
-[1725987650] n_past = 42
-[1725987650] n_remain: 992
-[1725987650] eval: [ '':10646 ]
-[1725987650] n_past = 43
-[1725987650] n_remain: 991
-[1725987650] eval: [ '':15682 ]
-[1725987650] n_past = 44
-[1725987650] n_remain: 990
-[1725987650] eval: [ '':5486 ]
-[1725987651] n_past = 45
-[1725987651] n_remain: 989
-[1725987651] eval: [ '':53229 ]
-[1725987651] n_past = 46
-[1725987651] n_remain: 988
-[1725987651] eval: [ '':45829 ]
-[1725987651] n_past = 47
-[1725987651] n_remain: 987
-[1725987651] eval: [ '':71289 ]
-[1725987651] n_past = 48
-[1725987651] n_remain: 986
-[1725987651] eval: [ '':45829 ]
-[1725987652] n_past = 49
-[1725987652] n_remain: 985
-[1725987652] eval: [ '':120566 ]
-[1725987652] n_past = 50
-[1725987652] n_remain: 984
-[1725987652] eval: [ '':45829 ]
-[1725987652] n_past = 51
-[1725987652] n_remain: 983
-[1725987652] eval: [ '':30512 ]
-[1725987652] n_past = 52
-[1725987652] n_remain: 982
-[1725987652] eval: [ '':102473 ]
-[1725987653] n_past = 53
-[1725987653] n_remain: 981
-[1725987653] eval: [ '':103359 ]
-[1725987653] n_past = 54
-[1725987653] n_remain: 980
-[1725987653] eval: [ '':47523 ]
-[1725987653] n_past = 55
-[1725987653] n_remain: 979
-[1725987653] eval: [ '':20230 ]
-[1725987653] n_past = 56
-[1725987653] n_remain: 978
-[1725987653] eval: [ '':56051 ]
-[1725987654] n_past = 57
-[1725987654] n_remain: 977
-[1725987654] eval: [ '':118656 ]
-[1725987654] n_past = 58
-[1725987654] n_remain: 976
-[1725987654] eval: [ '':48864 ]
-[1725987654] n_past = 59
-[1725987654] n_remain: 975
-[1725987654] eval: [ '':112028 ]
-[1725987654] n_past = 60
-[1725987654] n_remain: 974
-[1725987654] eval: [ '':17620 ]
-[1725987655] n_past = 61
-[1725987655] n_remain: 973
-[1725987655] eval: [ '':102212 ]
-[1725987655] n_past = 62
-[1725987655] n_remain: 972
-[1725987655] eval: [ '':38641 ]
-[1725987655] n_past = 63
-[1725987655] n_remain: 971
-[1725987655] eval: [ '':1811 ]
-[1725987655] n_past = 64
-[1725987655] n_remain: 970
-[1725987655] found an EOG token
-[1725987655] formatted: <|start_header_id|>assistant<|end_header_id|>
+[1725988225] input tokens: [ '<|start_header_id|>':128006, 'user':882, '<|end_header_id|>':128007, '':271, '':33857, '':45829, '':48634, '':48864, '':109853, '':102433, '':102158, '20':508, '':88435, '':23897, '':32943, '':16556, '':100927, '':107290, '':17297, '':65316, '':1811, '<|eot_id|>':128009, '<|start_header_id|>':128006, 'assistant':78191, '<|end_header_id|>':128007, '':271 ]
+[1725988225] n_remain: 998
+[1725988225] embd_inp.size(): 37, n_consumed: 11
+[1725988225] eval: [ '<|start_header_id|>':128006, 'user':882, '<|end_header_id|>':128007, '':271, '':33857, '':45829, '':48634, '':48864, '':109853, '':102433, '':102158, '20':508, '':88435, '':23897, '':32943, '':16556, '':100927, '':107290, '':17297, '':65316, '':1811, '<|eot_id|>':128009, '<|start_header_id|>':128006, 'assistant':78191, '<|end_header_id|>':128007, '':271 ]
+[1725988226] n_past = 37
+[1725988226] n_remain: 997
+[1725988226] eval: [ '':13177 ]
+[1725988226] n_past = 38
+[1725988226] n_remain: 996
+[1725988226] eval: [ '':33857 ]
+[1725988226] n_past = 39
+[1725988226] n_remain: 995
+[1725988226] eval: [ '':45829 ]
+[1725988227] n_past = 40
+[1725988227] n_remain: 994
+[1725988227] eval: [ '':48634 ]
+[1725988227] n_past = 41
+[1725988227] n_remain: 993
+[1725988227] eval: [ '':48864 ]
+[1725988227] n_past = 42
+[1725988227] n_remain: 992
+[1725988227] eval: [ '':10646 ]
+[1725988227] n_past = 43
+[1725988227] n_remain: 991
+[1725988227] eval: [ '':15682 ]
+[1725988228] n_past = 44
+[1725988228] n_remain: 990
+[1725988228] eval: [ '':5486 ]
+[1725988228] n_past = 45
+[1725988228] n_remain: 989
+[1725988228] eval: [ '':53229 ]
+[1725988228] n_past = 46
+[1725988228] n_remain: 988
+[1725988228] eval: [ '':45829 ]
+[1725988228] n_past = 47
+[1725988228] n_remain: 987
+[1725988228] eval: [ '':71289 ]
+[1725988229] n_past = 48
+[1725988229] n_remain: 986
+[1725988229] eval: [ '':45829 ]
+[1725988229] n_past = 49
+[1725988229] n_remain: 985
+[1725988229] eval: [ '':120566 ]
+[1725988229] n_past = 50
+[1725988229] n_remain: 984
+[1725988229] eval: [ '':45829 ]
+[1725988229] n_past = 51
+[1725988229] n_remain: 983
+[1725988229] eval: [ '':30512 ]
+[1725988230] n_past = 52
+[1725988230] n_remain: 982
+[1725988230] eval: [ '':102473 ]
+[1725988230] n_past = 53
+[1725988230] n_remain: 981
+[1725988230] eval: [ '':103359 ]
+[1725988230] n_past = 54
+[1725988230] n_remain: 980
+[1725988230] eval: [ '':47523 ]
+[1725988230] n_past = 55
+[1725988230] n_remain: 979
+[1725988230] eval: [ '':20230 ]
+[1725988231] n_past = 56
+[1725988231] n_remain: 978
+[1725988231] eval: [ '':56051 ]
+[1725988231] n_past = 57
+[1725988231] n_remain: 977
+[1725988231] eval: [ '':118656 ]
+[1725988231] n_past = 58
+[1725988231] n_remain: 976
+[1725988231] eval: [ '':48864 ]
+[1725988231] n_past = 59
+[1725988231] n_remain: 975
+[1725988231] eval: [ '':112028 ]
+[1725988232] n_past = 60
+[1725988232] n_remain: 974
+[1725988232] eval: [ '':17620 ]
+[1725988232] n_past = 61
+[1725988232] n_remain: 973
+[1725988232] eval: [ '':102212 ]
+[1725988232] n_past = 62
+[1725988232] n_remain: 972
+[1725988232] eval: [ '':38641 ]
+[1725988232] n_past = 63
+[1725988232] n_remain: 971
+[1725988232] eval: [ '':1811 ]
+[1725988233] n_past = 64
+[1725988233] n_remain: 970
+[1725988233] found an EOG token
+[1725988233] formatted: <|start_header_id|>assistant<|end_header_id|>
 
 「量子力学」は、原子や子粒子を研究対象にした物理学の一分野です。<|eot_id|>
-[1725987655] waiting for user input
-[1725987659] llama_perf_print:    sampling time =       7.28 ms /    54 runs   (    0.13 ms per token,  7415.55 tokens per second)
-[1725987659] llama_perf_print:        load time =    2256.39 ms
-[1725987659] llama_perf_print: prompt eval time =    4536.86 ms /    37 tokens (  122.62 ms per token,     8.16 tokens per second)
-[1725987659] llama_perf_print:        eval time =    6757.62 ms /    27 runs   (  250.28 ms per token,     4.00 tokens per second)
-[1725987659] llama_perf_print:       total time =   14742.78 ms /    64 tokens
+[1725988233] waiting for user input
+[1725988235] llama_perf_print:    sampling time =       7.01 ms /    54 runs   (    0.13 ms per token,  7704.38 tokens per second)
+[1725988235] llama_perf_print:        load time =    2294.02 ms
+[1725988235] llama_perf_print: prompt eval time =    4085.07 ms /    37 tokens (  110.41 ms per token,     9.06 tokens per second)
+[1725988235] llama_perf_print:        eval time =    6737.32 ms /    27 runs   (  249.53 ms per token,     4.01 tokens per second)
+[1725988236] llama_perf_print:       total time =   13801.38 ms /    64 tokens
