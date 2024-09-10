@@ -105,3 +105,17 @@ Note: --include-weights and --exclude-weights cannot be used together
 - 並列処理を制限する: スレッド数を1に固定するなど、並列処理を無効化または制限します。ただし、これにより処理速度が低下する可能性があります。
 
 ## 環境確認コマンド
+```
+uname -a
+python -V
+pip list
+gcc -v
+clang -v
+sha256sum ./model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf
+sha256sum ./llama.cpp_build/llama.cpp_b3707/llama-cli.exe
+
+cat /proc/cpuinfo
+
+sysctl -a | grep machdep.cpu
+system_profiler SPHardwareDataType
+```
