@@ -1,9 +1,11 @@
-yuu@Mac llama-cpp-python % ll
+(myenv) yuu@Mac llama-cpp-python % pwd
+/Users/yuu/repos/llama.cpp-dev/llama-cpp-python
+(myenv) yuu@Mac llama-cpp-python % ll
 total 8
 drwxr-xr-x   3 yuu  staff   96 Sep 10 12:15 ./
 drwxr-xr-x  16 yuu  staff  512 Sep 10 14:37 ../
 -rw-r--r--   1 yuu  staff  728 Sep 10 12:35 main.py
-yuu@Mac llama-cpp-python % python main.py
+(myenv) yuu@Mac llama-cpp-python % python main.py
 llama_model_loader: loaded meta data with 22 key-value pairs and 291 tensors from ../model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = llama
@@ -104,83 +106,46 @@ Model metadata: {'general.quantization_version': '2', 'tokenizer.chat_template':
 Available chat formats from metadata: chat_template.default
 Guessed chat format: llama-3
 「量子力学」は、物質の最小単位である原子や素粒子が持つ不思議な性質を研究する物理学の分野です。
-llama_print_timings:        load time =    5451.97 ms
-llama_print_timings:      sample time =       4.98 ms /    42 runs   (    0.12 ms per token,  8426.97 tokens per second)
-llama_print_timings: prompt eval time =    5451.90 ms /    37 tokens (  147.35 ms per token,     6.79 tokens per second)
-llama_print_timings:        eval time =    8556.62 ms /    41 runs   (  208.70 ms per token,     4.79 tokens per second)
-llama_print_timings:       total time =   14077.49 ms /    78 tokens
+llama_print_timings:        load time =    8791.64 ms
+llama_print_timings:      sample time =       5.09 ms /    42 runs   (    0.12 ms per token,  8251.47 tokens per second)
+llama_print_timings: prompt eval time =    8791.56 ms /    37 tokens (  237.61 ms per token,     4.21 tokens per second)
+llama_print_timings:        eval time =    9556.21 ms /    41 runs   (  233.08 ms per token,     4.29 tokens per second)
+llama_print_timings:       total time =   18415.62 ms /    78 tokens
 
-yuu@Mac llama-cpp-python % uname -a
+(myenv) yuu@Mac llama-cpp-python % uname -a
 Darwin Mac 23.6.0 Darwin Kernel Version 23.6.0: Mon Jul 29 21:16:46 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T8112 arm64
-yuu@Mac llama-cpp-python % python -V
+(myenv) yuu@Mac llama-cpp-python % python -V
 Python 3.11.10
-yuu@Mac llama-cpp-python % pip list
-Package            Version
------------------- --------
-cffi               1.17.1
-cryptography       43.0.1
-openvino           2024.2.0
-openvino-telemetry 2023.2.1
-packaging          24.0
-pip                24.2
-pycparser          2.22
-TBB                0.2
-wheel              0.44.0
-yuu@Mac llama-cpp-python % brew list
-==> Formulae
-aom             imath           libvorbis       postgresql@14
-aribb24         isl             libvpx          pugixml
-awscli          jpeg-turbo      libx11          pycparser
-brotli          jpeg-xl         libxau          python@3.11
-ca-certificates krb5            libxcb          python@3.12
-cairo           lame            libxdmcp        rav1e
-cffi            leptonica       libxext         readline
-cjson           libarchive      libxrender      rubberband
-coreutils       libass          little-cms2     sdl2
-cryptography    libb2           lz4             snappy
-dav1d           libbluray       lzo             speex
-fd              libevent        mbedtls         sqlite
-ffmpeg          libidn2         mpdecimal       srt
-flac            libmicrohttpd   mpfr            svt-av1
-fontconfig      libmpc          mpg123          tbb
-freetype        libnghttp2      n               telnet
-frei0r          libogg          nettle          tesseract
-fribidi         libpng          numpy           theora
-gcc             librist         openblas        unbound
-gettext         libsamplerate   opencore-amr    webp
-giflib          libsndfile      openexr         x264
-git-lfs         libsodium       openjdk         x265
-glib            libsoxr         openjpeg        xorgproto
-gmp             libssh          openssl@3       xvid
-gnutls          libtasn1        openvino        xz
-graphite2       libtiff         opus            zeromq
-harfbuzz        libunibreak     p11-kit         zimg
-highway         libunistring    pango           zstd
-hwloc           libvidstab      pcre2
-icu4c           libvmaf         pixman
-
-==> Casks
-chromedriver    libreoffice
-yuu@Mac llama-cpp-python % gcc --version
+(myenv) yuu@Mac llama-cpp-python % pip list
+Package           Version
+----------------- -------
+diskcache         5.6.3
+Jinja2            3.1.4
+llama_cpp_python  0.2.90
+MarkupSafe        2.1.5
+numpy             2.1.1
+pip               24.2
+setuptools        74.1.2
+typing_extensions 4.12.2
+(myenv) yuu@Mac llama-cpp-python % gcc --version
 Apple clang version 15.0.0 (clang-1500.3.9.4)
 Target: arm64-apple-darwin23.6.0
 Thread model: posix
-InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-yuu@Mac llama-cpp-python % clang --version
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+(myenv) yuu@Mac llama-cpp-python % clang --version
 Apple clang version 15.0.0 (clang-1500.3.9.4)
 Target: arm64-apple-darwin23.6.0
 Thread model: posix
-InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-yuu@Mac llama-cpp-python % sha256sum ../model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+(myenv) yuu@Mac llama-cpp-python % sha256sum ../model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf
 91553c45080b11d95be21bb67961c9a5d2ed7556275423efaaad6df54ba9beae  ../model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf
-yuu@Mac llama-cpp-python % sysctl -a | grep machdeq.cpu
-yuu@Mac llama-cpp-python % sysctl -a | grep machdep.cpu
+(myenv) yuu@Mac llama-cpp-python % sysctl -a | grep machdep.cpu
 machdep.cpu.cores_per_package: 8
 machdep.cpu.core_count: 8
 machdep.cpu.logical_per_package: 8
 machdep.cpu.thread_count: 8
 machdep.cpu.brand_string: Apple M2
-yuu@Mac llama-cpp-python % system_profiler SPHardwareDataType
+(myenv) yuu@Mac llama-cpp-python % system_profiler SPHardwareDataType
 Hardware:
 
     Hardware Overview:
@@ -198,7 +163,7 @@ Hardware:
       Provisioning UDID: 00008112-001A502A1A8B401E
       Activation Lock Status: Enabled
 
-yuu@Mac llama-cpp-python % cat main.py
+(myenv) yuu@Mac llama-cpp-python % cat main.py
 from llama_cpp import Llama
 
 model_path = "../model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf"
@@ -227,4 +192,4 @@ for chunk in output:
         content = chunk['choices'][0]['delta']['content']
         print(content, end='', flush=True)
 print()
-yuu@Mac llama-cpp-python % 
+(myenv) yuu@Mac llama-cpp-python % 

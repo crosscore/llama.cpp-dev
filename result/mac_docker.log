@@ -1,9 +1,9 @@
-yuu@Mac llama-cpp-python % ll
+root@ee1413b813a4:/app/llama-cpp-python$ ll
 total 8
-drwxr-xr-x   3 yuu  staff   96 Sep 10 12:15 ./
-drwxr-xr-x  16 yuu  staff  512 Sep 10 14:37 ../
--rw-r--r--   1 yuu  staff  728 Sep 10 12:35 main.py
-yuu@Mac llama-cpp-python % python main.py
+drwxr-xr-x 3 root root   96 Sep 10 03:15 ./
+drwxr-xr-x 1 root root 4096 Sep 10 05:07 ../
+-rw-r--r-- 1 root root  728 Sep 10 03:35 main.py
+root@ee1413b813a4:/app/llama-cpp-python$ python main.py
 llama_model_loader: loaded meta data with 22 key-value pairs and 291 tensors from ../model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = llama
@@ -83,8 +83,6 @@ llm_load_print_meta: LF token         = 128 'Ä'
 llm_load_print_meta: EOT token        = 128009 '<|eot_id|>'
 llm_load_print_meta: max token length = 256
 llm_load_tensors: ggml ctx size =    0.14 MiB
-llm_load_tensors: offloading 0 repeating layers to GPU
-llm_load_tensors: offloaded 0/33 layers to GPU
 llm_load_tensors:        CPU buffer size =  4685.30 MiB
 ........................................................................................
 llama_new_context_with_model: n_ctx      = 1024
@@ -98,107 +96,117 @@ llama_new_context_with_model: KV self size  =  128.00 MiB, K (f16):   64.00 MiB,
 llama_new_context_with_model:        CPU  output buffer size =     0.49 MiB
 llama_new_context_with_model:        CPU compute buffer size =   258.50 MiB
 llama_new_context_with_model: graph nodes  = 1030
-llama_new_context_with_model: graph splits = 514
-AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 0 | NEON = 1 | SVE = 0 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 1 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 |
-Model metadata: {'general.quantization_version': '2', 'tokenizer.chat_template': "{% set loop_messages = messages %}{% for message in loop_messages %}{% set content = '<|start_header_id|>' + message['role'] + '<|end_header_id|>\n\n'+ message['content'] | trim + '<|eot_id|>' %}{% if loop.index0 == 0 %}{% set content = bos_token + content %}{% endif %}{{ content }}{% endfor %}{% if add_generation_prompt %}{{ '<|start_header_id|>assistant<|end_header_id|>\n\n' }}{% endif %}", 'tokenizer.ggml.eos_token_id': '128009', 'tokenizer.ggml.bos_token_id': '128000', 'tokenizer.ggml.pre': 'llama-bpe', 'tokenizer.ggml.model': 'gpt2', 'llama.vocab_size': '128256', 'llama.attention.head_count_kv': '8', 'llama.context_length': '8192', 'llama.attention.head_count': '32', 'general.file_type': '15', 'llama.feed_forward_length': '14336', 'llama.rope.dimension_count': '128', 'llama.rope.freq_base': '500000.000000', 'llama.embedding_length': '4096', 'general.architecture': 'llama', 'llama.attention.layer_norm_rms_epsilon': '0.000010', 'general.name': 'Llama-3-8B-optimal-merged-stage2', 'llama.block_count': '32'}
+llama_new_context_with_model: graph splits = 1
+AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 0 | NEON = 1 | SVE = 0 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 |
+Model metadata: {'tokenizer.chat_template': "{% set loop_messages = messages %}{% for message in loop_messages %}{% set content = '<|start_header_id|>' + message['role'] + '<|end_header_id|>\n\n'+ message['content'] | trim + '<|eot_id|>' %}{% if loop.index0 == 0 %}{% set content = bos_token + content %}{% endif %}{{ content }}{% endfor %}{% if add_generation_prompt %}{{ '<|start_header_id|>assistant<|end_header_id|>\n\n' }}{% endif %}", 'tokenizer.ggml.eos_token_id': '128009', 'general.quantization_version': '2', 'tokenizer.ggml.model': 'gpt2', 'general.architecture': 'llama', 'llama.rope.freq_base': '500000.000000', 'tokenizer.ggml.pre': 'llama-bpe', 'llama.context_length': '8192', 'general.name': 'Llama-3-8B-optimal-merged-stage2', 'llama.embedding_length': '4096', 'llama.feed_forward_length': '14336', 'llama.attention.layer_norm_rms_epsilon': '0.000010', 'tokenizer.ggml.bos_token_id': '128000', 'llama.attention.head_count': '32', 'llama.block_count': '32', 'llama.attention.head_count_kv': '8', 'general.file_type': '15', 'llama.vocab_size': '128256', 'llama.rope.dimension_count': '128'}
 Available chat formats from metadata: chat_template.default
 Guessed chat format: llama-3
-「量子力学」は、物質の最小単位である原子や素粒子が持つ不思議な性質を研究する物理学の分野です。
-llama_print_timings:        load time =    5451.97 ms
-llama_print_timings:      sample time =       4.98 ms /    42 runs   (    0.12 ms per token,  8426.97 tokens per second)
-llama_print_timings: prompt eval time =    5451.90 ms /    37 tokens (  147.35 ms per token,     6.79 tokens per second)
-llama_print_timings:        eval time =    8556.62 ms /    41 runs   (  208.70 ms per token,     4.79 tokens per second)
-llama_print_timings:       total time =   14077.49 ms /    78 tokens
+「量子力学」は、物質の最小単位である「量子」が持つ不確定性を基に、原子・子粒子を研究する物理学の一分野です。
+llama_print_timings:        load time =    9056.01 ms
+llama_print_timings:      sample time =       7.99 ms /    48 runs   (    0.17 ms per token,  6008.26 tokens per second)
+llama_print_timings: prompt eval time =    9055.96 ms /    37 tokens (  244.76 ms per token,     4.09 tokens per second)
+llama_print_timings:        eval time =   19302.72 ms /    47 runs   (  410.70 ms per token,     2.43 tokens per second)
+llama_print_timings:       total time =   28423.87 ms /    84 tokens
 
-yuu@Mac llama-cpp-python % uname -a
-Darwin Mac 23.6.0 Darwin Kernel Version 23.6.0: Mon Jul 29 21:16:46 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T8112 arm64
-yuu@Mac llama-cpp-python % python -V
+root@ee1413b813a4:/app/llama-cpp-python$ uname -a
+Linux ee1413b813a4 6.10.0-linuxkit #1 SMP Wed Jul 17 10:51:09 UTC 2024 aarch64 GNU/Linux
+root@ee1413b813a4:/app/llama-cpp-python$ python -V
 Python 3.11.10
-yuu@Mac llama-cpp-python % pip list
-Package            Version
------------------- --------
-cffi               1.17.1
-cryptography       43.0.1
-openvino           2024.2.0
-openvino-telemetry 2023.2.1
-packaging          24.0
-pip                24.2
-pycparser          2.22
-TBB                0.2
-wheel              0.44.0
-yuu@Mac llama-cpp-python % brew list
-==> Formulae
-aom             imath           libvorbis       postgresql@14
-aribb24         isl             libvpx          pugixml
-awscli          jpeg-turbo      libx11          pycparser
-brotli          jpeg-xl         libxau          python@3.11
-ca-certificates krb5            libxcb          python@3.12
-cairo           lame            libxdmcp        rav1e
-cffi            leptonica       libxext         readline
-cjson           libarchive      libxrender      rubberband
-coreutils       libass          little-cms2     sdl2
-cryptography    libb2           lz4             snappy
-dav1d           libbluray       lzo             speex
-fd              libevent        mbedtls         sqlite
-ffmpeg          libidn2         mpdecimal       srt
-flac            libmicrohttpd   mpfr            svt-av1
-fontconfig      libmpc          mpg123          tbb
-freetype        libnghttp2      n               telnet
-frei0r          libogg          nettle          tesseract
-fribidi         libpng          numpy           theora
-gcc             librist         openblas        unbound
-gettext         libsamplerate   opencore-amr    webp
-giflib          libsndfile      openexr         x264
-git-lfs         libsodium       openjdk         x265
-glib            libsoxr         openjpeg        xorgproto
-gmp             libssh          openssl@3       xvid
-gnutls          libtasn1        openvino        xz
-graphite2       libtiff         opus            zeromq
-harfbuzz        libunibreak     p11-kit         zimg
-highway         libunistring    pango           zstd
-hwloc           libvidstab      pcre2
-icu4c           libvmaf         pixman
+root@ee1413b813a4:/app/llama-cpp-python$ pip list
+Package           Version
+----------------- -------
+diskcache         5.6.3
+Jinja2            3.1.4
+llama_cpp_python  0.2.90
+MarkupSafe        2.1.5
+numpy             2.1.1
+pip               24.2
+setuptools        65.5.1
+typing_extensions 4.12.2
+wheel             0.44.0
+root@ee1413b813a4:/app/llama-cpp-python$ gcc --version
+gcc (Debian 10.2.1-6) 10.2.1 20210110
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-==> Casks
-chromedriver    libreoffice
-yuu@Mac llama-cpp-python % gcc --version
-Apple clang version 15.0.0 (clang-1500.3.9.4)
-Target: arm64-apple-darwin23.6.0
-Thread model: posix
-InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-yuu@Mac llama-cpp-python % clang --version
-Apple clang version 15.0.0 (clang-1500.3.9.4)
-Target: arm64-apple-darwin23.6.0
-Thread model: posix
-InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-yuu@Mac llama-cpp-python % sha256sum ../model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf
+root@ee1413b813a4:/app/llama-cpp-python$ clang --version
+bash: clang: command not found
+root@ee1413b813a4:/app/llama-cpp-python$ sha256sum ../model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf
 91553c45080b11d95be21bb67961c9a5d2ed7556275423efaaad6df54ba9beae  ../model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf
-yuu@Mac llama-cpp-python % sysctl -a | grep machdeq.cpu
-yuu@Mac llama-cpp-python % sysctl -a | grep machdep.cpu
-machdep.cpu.cores_per_package: 8
-machdep.cpu.core_count: 8
-machdep.cpu.logical_per_package: 8
-machdep.cpu.thread_count: 8
-machdep.cpu.brand_string: Apple M2
-yuu@Mac llama-cpp-python % system_profiler SPHardwareDataType
-Hardware:
+root@ee1413b813a4:/app/llama-cpp-python$ cat /proc/cpuinfo
+processor       : 0
+BogoMIPS        : 48.00
+Features        : fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm ssbs sb paca pacg dcpodp flagm2 frint
+CPU implementer : 0x61
+CPU architecture: 8
+CPU variant     : 0x0
+CPU part        : 0x000
+CPU revision    : 0
 
-    Hardware Overview:
+processor       : 1
+BogoMIPS        : 48.00
+Features        : fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm ssbs sb paca pacg dcpodp flagm2 frint
+CPU implementer : 0x61
+CPU architecture: 8
+CPU variant     : 0x0
+CPU part        : 0x000
+CPU revision    : 0
 
-      Model Name: MacBook Air
-      Model Identifier: Mac14,2
-      Model Number: G1616J/A
-      Chip: Apple M2
-      Total Number of Cores: 8 (4 performance and 4 efficiency)
-      Memory: 24 GB
-      System Firmware Version: 10151.140.19
-      OS Loader Version: 10151.140.19
-      Serial Number (system): CKV2J966DY
-      Hardware UUID: 1AE8269E-A18C-5756-80C8-C126EEA4E97B
-      Provisioning UDID: 00008112-001A502A1A8B401E
-      Activation Lock Status: Enabled
+processor       : 2
+BogoMIPS        : 48.00
+Features        : fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm ssbs sb paca pacg dcpodp flagm2 frint
+CPU implementer : 0x61
+CPU architecture: 8
+CPU variant     : 0x0
+CPU part        : 0x000
+CPU revision    : 0
 
-yuu@Mac llama-cpp-python % cat main.py
+processor       : 3
+BogoMIPS        : 48.00
+Features        : fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm ssbs sb paca pacg dcpodp flagm2 frint
+CPU implementer : 0x61
+CPU architecture: 8
+CPU variant     : 0x0
+CPU part        : 0x000
+CPU revision    : 0
+
+processor       : 4
+BogoMIPS        : 48.00
+Features        : fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm ssbs sb paca pacg dcpodp flagm2 frint
+CPU implementer : 0x61
+CPU architecture: 8
+CPU variant     : 0x0
+CPU part        : 0x000
+CPU revision    : 0
+
+processor       : 5
+BogoMIPS        : 48.00
+Features        : fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm ssbs sb paca pacg dcpodp flagm2 frint
+CPU implementer : 0x61
+CPU architecture: 8
+CPU variant     : 0x0
+CPU part        : 0x000
+CPU revision    : 0
+
+processor       : 6
+BogoMIPS        : 48.00
+Features        : fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm ssbs sb paca pacg dcpodp flagm2 frint
+CPU implementer : 0x61
+CPU architecture: 8
+CPU variant     : 0x0
+CPU part        : 0x000
+CPU revision    : 0
+
+processor       : 7
+BogoMIPS        : 48.00
+Features        : fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm ssbs sb paca pacg dcpodp flagm2 frint
+CPU implementer : 0x61
+CPU architecture: 8
+CPU variant     : 0x0
+CPU part        : 0x000
+CPU revision    : 0
+root@ee1413b813a4:/app/llama-cpp-python$ cat main.py
 from llama_cpp import Llama
 
 model_path = "../model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf"
@@ -227,4 +235,3 @@ for chunk in output:
         content = chunk['choices'][0]['delta']['content']
         print(content, end='', flush=True)
 print()
-yuu@Mac llama-cpp-python % 
