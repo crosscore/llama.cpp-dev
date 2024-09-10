@@ -40,13 +40,11 @@ Note: --include-weights and --exclude-weights cannot be used together
 ```
 ./llama.cpp/llama-cli.exe -m ./quantized_model/llama-3-youko-8b-q4_0.gguf --color -i -n 128 -c 1024 -p "you are a helpful assistant" -cnv
 
-./llama.cpp/llama-cli.exe -m ./quantized_model/llama-3-youko-8b-q8_0.gguf --color -i -n 128 -c 1024 -p "you are a helpful assistant" -cnv
-
-./llama.cpp/llama-cli.exe -m ./quantized_model/llama-3-youko-8b.gguf --color -i -n 128 -c 1024 -i -p "you are a helpful assistant" --stop "<|im_end|>" -cnv
-
 ./llama.cpp/llama-cli.exe -m ./model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf --color -i -n 1024 -i --seed 42 -p "you are a helpful assistant" -cnv
 
 ./llama.cpp_build/llama.cpp_b3707/llama-cli -m ./model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf --color -i -n 1024 -i --seed 42 -p "you are a helpful assistant" -cnv
+
+./llama.cpp_build/llama.cpp_b3707/llama-cli.exe -m ./model/Llama-3-ELYZA-JP-8B-GGUF/Llama-3-ELYZA-JP-8B-q4_k_m.gguf --color -i -n 1024 -i --seed 42 -p "you are a helpful assistant" -cnv
 ```
 
 ### 質問文
