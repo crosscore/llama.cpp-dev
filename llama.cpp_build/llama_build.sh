@@ -23,8 +23,8 @@ fi
 echo "GCC version:"
 gcc --version
 
-# Set log file name
-LOG_FILE="build_log_$(date +%Y%m%d_%H%M%S).txt"
+# Set log file name with modified path
+LOG_FILE="../build_log_$(date +%Y%m%d_%H%M%S).txt"
 
 echo "Building llama.cpp..."
 # Redirect both stdout and stderr to the log file, and also display on console
