@@ -9,6 +9,7 @@ services:
       - ./result:/app/result
       - ./tips:/app/tips
       - ./llama.cpp_build:/app/llama.cpp_build
+      - ./llama-cpp-python:/app/llama-cpp-python
     environment:
       - OMP_NUM_THREADS=1
       - OPENBLAS_NUM_THREADS=1
