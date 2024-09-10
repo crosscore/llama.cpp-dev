@@ -9,14 +9,15 @@ ENV OPENBLAS_NUM_THREADS=1
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
     build-essential \
-    cmake \
+    make \
+    git \
     libopenblas-dev \
     ninja-build \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
-WORKDIR /app/llama.cpp
+WORKDIR /app
 
 # Use CMD instead of ENTRYPOINT
 CMD ["/bin/bash", "-c", "tail -f /dev/null"]
