@@ -7,7 +7,6 @@ services:
     volumes:
       - ./model:/app/model
       - ./result:/app/result
-      - ./tips:/app/tips
       - ./llama.cpp_build:/app/llama.cpp_build
       - ./llama-cpp-python:/app/llama-cpp-python
     environment:
