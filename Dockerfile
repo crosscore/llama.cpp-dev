@@ -34,5 +34,4 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Set default command
-CMD ["/bin/bash"]
+CMD ["/bin/bash", "-c", "tail -f /dev/null"]
