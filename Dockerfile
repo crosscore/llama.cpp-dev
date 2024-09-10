@@ -3,8 +3,8 @@ FROM python:3.11-slim-bookworm
 
 # Avoid prompts from apt and set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
-ENV OMP_NUM_THREADS=4
-ENV OPENBLAS_NUM_THREADS=4
+ENV OMP_NUM_THREADS=0
+ENV OPENBLAS_NUM_THREADS=0
 
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
