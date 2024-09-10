@@ -27,8 +27,8 @@ gcc --version
 LOG_FILE="../build_log_$(date +%Y%m%d_%H%M%S).txt"
 
 echo "Building llama.cpp..."
-# Redirect both stdout and stderr to the log file, and also display on console
-make 2>&1 | tee "$LOG_FILE"
+# Build with OpenBLAS and OpenMP support, but without architecture-specific optimizations
+make LLAMA_OPENBLAS=1 LLAMA_OPENMP=1 2>&1 | tee "$LOG_FILE"
 
 echo "Build process completed. Log saved to $LOG_FILE"
 
