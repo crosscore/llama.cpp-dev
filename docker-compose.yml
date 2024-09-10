@@ -1,15 +1,23 @@
 services:
-  llama-cpp:
+  llama:
+    container_name: llama
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: llama
     volumes:
       - ../model:/app/model
       - ../result:/app/result
       - ../tips:/app/tips
-      - ./llama_cpp_build:/app/llama.cpp  # New volume for build artifacts
+      - ./llama.cpp_build:/app/llama.cpp_build
     environment:
       - OMP_NUM_THREADS=1
       - OPENBLAS_NUM_THREADS=1
-    working_dir: /app/llama.cpp
+    working_dir: /app
+    ports:
+      - 8001:8001
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge

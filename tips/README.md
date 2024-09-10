@@ -1,7 +1,8 @@
 
 ## llama.cppをビルド
 ```
-mingw32-make
+mingw32-make # MSYS2
+make
 ```
 
 ## モデルをgguf形式に変換
