@@ -7,17 +7,49 @@ services:
     volumes:
       - ./model:/app/model
       - ./result:/app/result
-      - ./llama.cpp_build:/app/llama.cpp_build
-      - ./llama-cpp-python:/app/llama-cpp-python
+      # llama.cppのマウントを削除
+      # - ./llama.cpp:/app/llama.cpp
+      # 必要に応じてllama-cpp-pythonをマウント
+      # - ./llama-cpp-python:/app/llama-cpp-python
     environment:
       - OMP_NUM_THREADS=1
       - OPENBLAS_NUM_THREADS=1
-    working_dir: /app
-    ports:
-      - 8001:8001
-    networks:
-      - app_network
+    # working_dir: /app
+    # ポートの公開を削除
+    # ports:
+    #   - 8001:8001
+    # ネットワークの設定を削除
+    # networks:
+    #   - app_network
+    stdin_open: true
+    tty: true
 
-networks:
-  app_network:
-    driver: bridge
+# ネットワークの設定を削除
+# networks:
+#   app_network:
+#     driver: bridge
+
+
+# services:
+#   llama:
+#     container_name: llama
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     volumes:
+#       - ./model:/app/model
+#       - ./result:/app/result
+#       - ./llama.cpp:/app/llama.cpp
+#       #- ./llama-cpp-python:/app/llama-cpp-python
+#     environment:
+#       - OMP_NUM_THREADS=1
+#       - OPENBLAS_NUM_THREADS=1
+#     working_dir: /app
+#     ports:
+#       - 8001:8001
+#     networks:
+#       - app_network
+
+# networks:
+#   app_network:
+#     driver: bridge
